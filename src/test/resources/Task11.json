@@ -1,0 +1,11 @@
+{
+  "page": {
+    "url": "https://duckduckgo.com/"
+  },
+  "searchBox": {
+    "value": "Selenium WebDriver"
+  },
+  "expectedResults": {
+    "value": "https://www.selenium.dev/documentation/webdriver/"
+  }
+}

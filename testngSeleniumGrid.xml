@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite - Parallel Grid Browsers" parallel="classes" thread-count="3">
+
+    <!-- ===================== Chrome Tests ===================== -->
+    <test name="Chrome - TestTask1">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="driverType" value="grid"/>
+        <classes>
+            <class name="Tasks.TestTask1"/>
+            <class name="Tasks.TestTask11"/>
+            <class name="Tasks.TestTask2"/>
+            <class name="Tasks.TestTask5"/>
+        </classes>
+    </test>
+
+
+    <!-- ===================== Firefox Tests ===================== -->
+    <test name="Firefox - TestTask3">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="driverType" value="grid"/>
+        <classes>
+            <class name="Tasks.TestTask3"/>
+            <class name="Tasks.TestTask4"/>
+            <class name="Tasks.TestTask9"/>
+        </classes>
+    </test>
+
+
+    <!-- ===================== Edge Tests ===================== -->
+    <test name="Edge - TestTask6">
+        <parameter name="browser" value="edge"/>
+        <parameter name="driverType" value="grid"/>
+        <classes>
+            <class name="Tasks.TestTask6"/>
+            <class name="Tasks.TestTask7"/>
+            <class name="Tasks.TestTask8"/>
+
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/{your-file}.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/{your-file}.java" />
+              <option name="originalContent" value="// ...existing code...&#10;try {&#10;    // Yellow underline below 'URL'&#10;    // ===========================&#10;    return new RemoteWebDriver(new URL(gridUrl), options);&#10;    // ===========================&#10;} catch (MalformedURLException e) {&#10;    // ...existing code...&#10;}&#10;// ...existing code...&#10;" />
+              <option name="updatedContent" value="// ...existing code...&#10;try {&#10;    // Yellow underline below 'URL'&#10;    // ===========================&#10;    return new RemoteWebDriver(new URL(gridUrl), options);&#10;    // ===========================&#10;} catch (MalformedURLException e) {&#10;    // ...existing code...&#10;}&#10;// ...existing code...&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
