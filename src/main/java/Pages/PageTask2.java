@@ -1,16 +1,17 @@
 package Pages;
-import Actions.FluentBrowserActionsBot;
-import engine.FluentDriverEngine;
-import Actions.FluentElementActionsBot;
+import engine.FluentBrowserActionsBot;
+import engine.FluentElementActionsBot;
 import org.openqa.selenium.By;
 
 public class PageTask2 extends BasePage{
 
 
-    public PageTask2(FluentDriverEngine bot) {
-        this.fluentDriverEngine = bot;
-        fluentElementActionsBot = new FluentElementActionsBot(fluentDriverEngine.getDriver(), fluentDriverEngine.getWait());
-        fluentBrowserActionsBot = new FluentBrowserActionsBot(fluentDriverEngine.getDriver(), fluentDriverEngine.getWait());
+    public PageTask2(FluentBrowserActionsBot bot) {
+        this.fluentBrowserActionsBot = bot;
+        fluentElementActionsBot = new FluentElementActionsBot(fluentBrowserActionsBot.getDriver(),
+                fluentBrowserActionsBot.getWait());
+        fluentBrowserActionsBot = new FluentBrowserActionsBot(fluentBrowserActionsBot.getDriver(),
+                fluentBrowserActionsBot.getWait());
     }
 
 

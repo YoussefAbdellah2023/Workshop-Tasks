@@ -1,14 +1,12 @@
 package Pages;
 
-import Actions.FluentBrowserActionsBot;
-import engine.FluentDriverEngine;
-import Actions.FluentElementActionsBot;
+import engine.FluentBrowserActionsBot;
+import engine.FluentElementActionsBot;
 
 public abstract class BasePage{
 
     FluentBrowserActionsBot fluentBrowserActionsBot;
     FluentElementActionsBot fluentElementActionsBot;
-    FluentDriverEngine fluentDriverEngine;
 
 
 
