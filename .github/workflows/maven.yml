@@ -22,7 +22,9 @@ on:
           - Tasks.TestTask2
           - Tasks.TestTask3
           - Tasks.TestTask4
-
+      classes:
+       description: 'Optional: Comma-separated list of test classes to run (e.g., Tasks.TestTask1,Tasks.TestTask2)'
+       required: false
   push:
     branches: [ "master" ]
   pull_request:
@@ -46,14 +48,19 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Run selected test page
+      - name: Run selected test(s)
         run: |
-          if [ "${{ github.event.inputs.page }}" = "All" ]; then
-            mvn test
-          else
-            mvn -Dtest=${{ github.event.inputs.page }} test
-          fi
-        shell: bash
+            if [ -n "${{ github.event.inputs.classes }}" ]; then
+              echo "Running multiple classes: ${{ github.event.inputs.classes }}"
+              mvn -Dtest=${{ github.event.inputs.classes }} test
+            elif [ "${{ github.event.inputs.page }}" = "All" ]; then
+              echo "Running all tests"
+              mvn test
+            else
+              echo "Running single page: ${{ github.event.inputs.page }}"
+              mvn -Dtest=${{ github.event.inputs.page }} test
+            fi
+          shell: bash
 
       - name: Update dependency graph
         uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
