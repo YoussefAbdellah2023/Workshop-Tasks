@@ -8,8 +8,8 @@ import java.io.File;
 
 public class FluentElementActionsBot {
 
-      WebDriver driver;
-      Wait<WebDriver> wait;
+    WebDriver driver;
+    Wait<WebDriver> wait;
 
     public FluentElementActionsBot(WebDriver driver, Wait<WebDriver> wait) {
         this.driver = driver;
@@ -42,7 +42,7 @@ public class FluentElementActionsBot {
     public FluentElementActionsBot uploadFile(By locator, String filePath) {
         File uploadFile = new File(filePath);
         wait.until(d -> {
-           d.findElement(locator).sendKeys(uploadFile.getAbsolutePath());
+            d.findElement(locator).sendKeys(uploadFile.getAbsolutePath());
             return true;
         });
         return this;
@@ -78,4 +78,3 @@ public class FluentElementActionsBot {
         return wait.until(d -> d.findElement(locator).getText());
     }
 }
-

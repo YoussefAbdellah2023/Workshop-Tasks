@@ -1,16 +1,16 @@
 package Pages;
 
-import engine.FluentBrowserActionsBot;
+import Actions.FluentBrowserActionsBot;
+import engine.FluentDriverEngine;
 
-import static engine.FluentFilesBot.getConfigValue;
+import static Files.FluentFilesBot.getConfigValue;
 
 public class PageTask1 extends BasePage {
 
 
-    public PageTask1(FluentBrowserActionsBot bot) {
-        this.fluentBrowserActionsBot = bot;
-        this.fluentBrowserActionsBot = new FluentBrowserActionsBot(fluentBrowserActionsBot.getDriver(),
-                fluentBrowserActionsBot.getWait());
+    public PageTask1(FluentDriverEngine bot) {
+        this.fluentDriverEngine = bot;
+        this.fluentBrowserActionsBot = new FluentBrowserActionsBot(fluentDriverEngine.getDriver(), fluentDriverEngine.getWait());
     }
 
 

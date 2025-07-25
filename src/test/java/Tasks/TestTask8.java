@@ -15,12 +15,12 @@ public class TestTask8 extends FluentBotTestCase{
 
     @Test
     public void verifyFileUploadedSuccessfully(){
-       String actualResult =  new PageTask8(bot)
-               .navigateToUploadPage()
-               .uploadFile()
-               .clickUploadButton()
-               .getUploadSuccessMessage();
+        String actualResult =  new PageTask8(bot)
+                .navigateToUploadPage()
+                .uploadFile()
+                .clickUploadButton()
+                .getUploadSuccessMessage();
 
-       Assert.assertEquals(actualResult,"File Uploaded!", "File upload was not successful");
+        Assert.assertEquals(actualResult,"File Uploaded!", "File upload was not successful");
     }
 }

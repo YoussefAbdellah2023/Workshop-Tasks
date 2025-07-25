@@ -1,7 +1,6 @@
 package Tasks;
 
 import Pages.PageTask2;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,8 +15,8 @@ public class TestTask2 extends FluentBotTestCase{
     @Test
     public void navigateToDuckDuckGoAndCheckLogoIsDisplayed() {
         boolean ActualResult = new PageTask2(bot)
-             .navigateToPage()
-             .LogoIsDisplayed();
+                .navigateToPage()
+                .LogoIsDisplayed();
         Assert.assertTrue(ActualResult, "DuckDuckGo logo is not displayed");
 
     }

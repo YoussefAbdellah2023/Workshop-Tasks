@@ -31,7 +31,7 @@ public class PageTask5 extends BasePage {
     }
 
     public String isSecondResultLinkedIn() {
-       return fluentElementActionsBot.getDomAttribute(urlSecondResult, "href");
+        return fluentElementActionsBot.getDomAttribute(urlSecondResult, "href");
 
     }
 

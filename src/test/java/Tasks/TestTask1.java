@@ -14,12 +14,22 @@ public class TestTask1 extends FluentBotTestCase{
 
     @Test
     public void navigateToDuckDuckGoAndCheckTitle() {
-       String actualResult=
-               new PageTask1(bot)
-               .navigateToDuckDuckGo()
-                .getTitle();
+        String actualResult=
+                new PageTask1(bot)
+                        .navigateToDuckDuckGo()
+                        .getTitle();
         Assert.assertEquals(actualResult, "Google", "Page title is not as expected");
     }
+
+    @Test
+    public void navigateToDuckDuckGoAndCheckTitle2() {
+        String actualResult=
+                new PageTask1(bot)
+                        .navigateToDuckDuckGo()
+                        .getTitle();
+        Assert.assertEquals(actualResult, "Google", "Page title is not as expected");
+    }
+
 
 
 }

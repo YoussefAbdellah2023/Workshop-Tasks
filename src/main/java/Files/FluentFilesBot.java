@@ -15,7 +15,7 @@ import java.util.Properties;
 public class FluentFilesBot {
 
 
-//     TODO: WorkShop Tasks (#12) Read browser type from Properties file
+    //     TODO: WorkShop Tasks (#12) Read browser type from Properties file
     public static String CONFIG_PATH = "src/main/resources/PropertiesFiles/";
 
     public static String getConfigValue(String fileName, String key) {
