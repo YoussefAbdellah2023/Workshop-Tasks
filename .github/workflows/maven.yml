@@ -74,6 +74,7 @@ jobs:
           else
             echo "Running single page: ${{ github.event.inputs.page }}"
             mvn clean test -Dtest=${{ github.event.inputs.page }}
+          fi
         shell: bash
 
       - name: Update dependency graph
