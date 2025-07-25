@@ -12,6 +12,7 @@
             <class name="Tasks.TestTask2"/>
             <class name="Tasks.TestTask3"/>
             <class name="Tasks.TestTask5"/>
+            <class name="Tasks.TestTask8"/>
         </classes>
     </test>
 
@@ -24,7 +25,6 @@
             <class name="Tasks.TestTask4"/>
             <class name="Tasks.TestTask6"/>
             <class name="Tasks.TestTask7"/>
-            <class name="Tasks.TestTask8"/>
             <class name="Tasks.TestTask9"/>
         </classes>
     </test>
