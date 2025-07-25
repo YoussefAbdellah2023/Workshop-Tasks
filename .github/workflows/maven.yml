@@ -23,7 +23,7 @@ on:
           - Tasks.TestTask3
           - Tasks.TestTask4
       classes:
-       description: 'Optional: Comma-separated list of test classes to run (e.g., Tasks.TestTask1,Tasks.TestTask2)'
+       description: 'Optional: Comma-separated list of test classes to run (Tasks.TestTask1,Tasks.TestTask2)'
        required: false
   push:
     branches: [ "master" ]
@@ -47,7 +47,6 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-
       - name: Run selected test(s)
         run: |
             if [ -n "${{ github.event.inputs.classes }}" ]; then
