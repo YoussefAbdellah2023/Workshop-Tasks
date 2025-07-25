@@ -18,10 +18,10 @@ on:
         type: choice
         options:
           - All
-          - Task.TestTask1
-          - Task.TestTask2
-          - Task.TestTask3
-          - Task.TestTask4
+          - Tasks.TestTask1
+          - Tasks.TestTask2
+          - Tasks.TestTask3
+          - Tasks.TestTask4
 
   push:
     branches: [ "master" ]
