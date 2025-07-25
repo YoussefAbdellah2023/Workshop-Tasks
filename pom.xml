@@ -12,11 +12,8 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<!--        <testNGSuite>testngDefault.xml</testNGSuite>-->
-        <parallel>none</parallel>
-        <threadCount>1</threadCount>
+        <testNGSuite>testng.xml</testNGSuite>
     </properties>
-
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -47,7 +44,6 @@
         </dependency>
     </dependencies>
 
-
     <!--    /// TODO: WorkShop-Tasks (#14) -->
     <build>
         <plugins>
@@ -58,18 +54,11 @@
                 <configuration>
                     <!-- Use suite XML if specified -->
                     <suiteXmlFiles>
-<!--                        <suiteXmlFile>${testNGSuite}</suiteXmlFile>-->
+                        <suiteXmlFile>${testNGSuite}</suiteXmlFile>
                     </suiteXmlFiles>
-
-                    <!-- Parallel config (only used if running without suiteXmlFile) -->
-                    <parallel>${parallel}</parallel>
-                    <threadCount>${threadCount}</threadCount>
-
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-
 
 </project>
