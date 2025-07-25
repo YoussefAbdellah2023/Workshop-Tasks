@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       page:
-        description: 'Select a single page to test (ignored if classes or testngFile is set)'
+        description: 'Select a single page to test (ignored if classes or testNGSuite is set)'
         required: true
         default: 'All'
         type: choice
@@ -28,8 +28,8 @@ on:
         description: 'Optional: Comma-separated list of test classes to run (e.g., Tasks.TestTask1,Tasks.TestTask2)'
         required: false
 
-      testngFile:
-        description: 'Optional: Run a specific TestNG XML file (e.g., testng-smoke.xml)'
+      testNGSuite:
+        description: 'Optional: Run a specific TestNG XML file (e.g., testngThreadLocal.xml)'
         required: false
 
   push:
@@ -62,19 +62,18 @@ jobs:
 
       - name: Run selected tests
         run: |
-          if [ -n "${{ github.event.inputs.testngFile }}" ]; then
-            echo "Running TestNG file: ${{ github.event.inputs.testngFile }}"
-            mvn test -DsuiteXmlFile=${{ github.event.inputs.testngFile }}
+          if [ -n "${{ github.event.inputs.testNGSuite }}" ]; then
+            echo "Running TestNG suite: ${{ github.event.inputs.testNGSuite }}"
+            mvn clean test -DtestNGSuite=${{ github.event.inputs.testNGSuite }}
           elif [ -n "${{ github.event.inputs.classes }}" ]; then
             echo "Running multiple classes: ${{ github.event.inputs.classes }}"
-            mvn -Dtest=${{ github.event.inputs.classes }} test
+            mvn clean test -Dtest=${{ github.event.inputs.classes }}
           elif [ "${{ github.event.inputs.page }}" = "All" ]; then
             echo "Running all tests"
-            mvn test
+            mvn clean test
           else
             echo "Running single page: ${{ github.event.inputs.page }}"
-            mvn -Dtest=${{ github.event.inputs.page }} test
-          fi
+            mvn clean test -Dtest=${{ github.event.inputs.page }}
         shell: bash
 
       - name: Update dependency graph
