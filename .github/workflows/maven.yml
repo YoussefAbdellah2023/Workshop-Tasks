@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       page:
-        description: 'Select a single page to test (will be ignored if classes input is filled)'
+        description: 'Select a single page to test (ignored if classes or suiteFile is filled)'
         required: true
         default: 'All'
         type: choice
@@ -24,7 +24,11 @@ on:
           - Tasks.TestTask4
 
       classes:
-        description: 'Optional: Comma-separated list of test classes to run (Tasks.TestTask1,Tasks.TestTask2)'
+        description: 'Optional: Comma-separated list of test classes (e.g. Tasks.TestTask1,Tasks.TestTask2)'
+        required: false
+
+      suiteFile:
+        description: 'Optional: TestNG suite XML file (e.g. testng-smoke.xml)'
         required: false
 
   push:
@@ -52,7 +56,10 @@ jobs:
 
       - name: Run selected tests
         run: |
-          if [ -n "${{ github.event.inputs.classes }}" ]; then
+          if [ -n "${{ github.event.inputs.suiteFile }}" ]; then
+            echo "Running TestNG suite file: ${{ github.event.inputs.suiteFile }}"
+            mvn test -DsuiteXmlFile=${{ github.event.inputs.suiteFile }}
+          elif [ -n "${{ github.event.inputs.classes }}" ]; then
             echo "Running multiple classes: ${{ github.event.inputs.classes }}"
             mvn -Dtest=${{ github.event.inputs.classes }} test
           elif [ "${{ github.event.inputs.page }}" = "All" ]; then
