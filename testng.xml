@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="G:/Round 31 Automation/Workshop-Tasks/src/test/java/Tasks">
+        <classes>
+            <class name="Tasks.TestTask1">
+                <methods>
+                    <include name="navigateToDuckDuckGoAndCheckTitle"/>
+                    <include name="navigateToDuckDuckGoAndCheckTitle2"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask11">
+                <methods>
+                    <include name="searchForSeleniumWebDriverAndCheckFirstResultLink"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask2">
+                <methods>
+                    <include name="navigateToDuckDuckGoAndCheckLogoIsDisplayed"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask3">
+                <methods>
+                    <include name="searchForSeleniumWebDriverAndCheckFirstResultLink"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask4">
+                <methods>
+                    <include name="searchForTestNGAndCheckFourthResultText"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask5">
+                <methods>
+                    <include name="navigateToSeleniumWebDriverAndCheckTitle"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask6">
+                <methods>
+                    <include name="navigateToHerokuAppAndCheckCheckboxesAreChecked"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask7">
+                <methods>
+                    <include name="verifyCountryForErnstHandel"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask8">
+                <methods>
+                    <include name="verifyFileUploadedSuccessfully"/>
+                </methods>
+            </class>
+            <class name="Tasks.TestTask9">
+                <methods>
+                    <include name="verifyDragAndDropFunctionality"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
