@@ -18,9 +18,10 @@ on:
         type: choice
         options:
           - All
-          - LoginPageTest
-          - HomePageTest
-          - ProfilePageTest
+          - Task.TestTask1
+          - Task.TestTask2
+          - Task.TestTask3
+          - Task.TestTask4
 
   push:
     branches: [ "master" ]
