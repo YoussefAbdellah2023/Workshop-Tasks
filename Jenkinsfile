@@ -7,11 +7,6 @@ pipeline {
         choice(name: 'page', choices: ['All', 'Tasks.TestTask1', 'Tasks.TestTask2', 'Tasks.TestTask3', 'Tasks.TestTask4', 'Tasks.TestTask5'], description: 'Select a page to test')
     }
 
-    environment {
-        JAVA_HOME = tool name: 'JDK21', type: 'jdk'
-        PATH = "${JAVA_HOME}/bin:${env.PATH}"
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
