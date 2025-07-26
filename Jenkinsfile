@@ -19,16 +19,16 @@ pipeline {
                 script {
                     if (params.testNGSuite?.trim()) {
                         echo "Running TestNG suite: ${params.testNGSuite}"
-                        sh "mvn clean test -DtestNGSuite=${params.testNGSuite}"
+                        bat "mvn clean test -DtestNGSuite=${params.testNGSuite}"
                     } else if (params.classes?.trim()) {
                         echo "Running multiple classes: ${params.classes}"
-                        sh "mvn clean test -Dtest=${params.classes}"
+                        bat "mvn clean test -Dtest=${params.classes}"
                     } else if (params.page == 'All') {
                         echo "Running all tests"
-                        sh "mvn clean test"
+                        bat "mvn clean test"
                     } else {
                         echo "Running single page: ${params.page}"
-                        sh "mvn clean test -Dtest=${params.page}"
+                        bat "mvn clean test -Dtest=${params.page}"
                     }
                 }
             }
